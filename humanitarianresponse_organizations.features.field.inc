@@ -67,6 +67,73 @@ function humanitarianresponse_organizations_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-organizations-field_organization_type'
+  $fields['taxonomy_term-organizations-field_organization_type'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_organization_type',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'organization_types',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'organizations',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 2,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_organization_type',
+      'label' => 'Type',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
         'weight' => '1',
       ),
     ),
@@ -143,7 +210,7 @@ function humanitarianresponse_organizations_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -151,6 +218,7 @@ function humanitarianresponse_organizations_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Acronym');
+  t('Type');
   t('Website');
 
   return $fields;
