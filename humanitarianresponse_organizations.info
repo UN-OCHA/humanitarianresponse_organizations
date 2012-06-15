@@ -4,6 +4,7 @@ core = 7.x
 package = Humanitarianresponse
 php = 5.2.4
 dependencies[] = features
+dependencies[] = i18n_taxonomy
 dependencies[] = link
 dependencies[] = taxonomy
 features[features_api][] = api:1
