@@ -10,7 +10,7 @@
 function humanitarianresponse_organizations_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'taxonomy_term-organizations-field_organization_acronym'
+  // Exported field: 'taxonomy_term-organizations-field_organization_acronym'.
   $fields['taxonomy_term-organizations-field_organization_acronym'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function humanitarianresponse_organizations_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -72,7 +73,7 @@ function humanitarianresponse_organizations_field_default_fields() {
     ),
   );
 
-  // Exported field: 'taxonomy_term-organizations-field_organization_type'
+  // Exported field: 'taxonomy_term-organizations-field_organization_type'.
   $fields['taxonomy_term-organizations-field_organization_type'] = array(
     'field_config' => array(
       'active' => '1',
@@ -96,6 +97,7 @@ function humanitarianresponse_organizations_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -104,6 +106,7 @@ function humanitarianresponse_organizations_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -139,7 +142,7 @@ function humanitarianresponse_organizations_field_default_fields() {
     ),
   );
 
-  // Exported field: 'taxonomy_term-organizations-field_organization_website'
+  // Exported field: 'taxonomy_term-organizations-field_organization_website'.
   $fields['taxonomy_term-organizations-field_organization_website'] = array(
     'field_config' => array(
       'active' => '1',
@@ -149,6 +152,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'field_name' => 'field_organization_website',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
