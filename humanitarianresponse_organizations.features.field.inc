@@ -289,7 +289,6 @@ function humanitarianresponse_organizations_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
