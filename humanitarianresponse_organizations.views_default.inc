@@ -70,7 +70,7 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['path'] = 'organizations';
 
   /* Display: XLS */
-  $handler = $view->new_display('views_data_export', 'XLS', 'views_data_export_1');
+  $handler = $view->new_display('views_data_export', 'XLS', 'xls');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -78,7 +78,65 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['filename'] = 'organizations.xls';
   $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Acronym */
+  $handler->display->display_options['fields']['field_organization_acronym']['id'] = 'field_organization_acronym';
+  $handler->display->display_options['fields']['field_organization_acronym']['table'] = 'field_data_field_organization_acronym';
+  $handler->display->display_options['fields']['field_organization_acronym']['field'] = 'field_organization_acronym';
+  /* Field: Taxonomy term: Website */
+  $handler->display->display_options['fields']['field_organization_website']['id'] = 'field_organization_website';
+  $handler->display->display_options['fields']['field_organization_website']['table'] = 'field_data_field_organization_website';
+  $handler->display->display_options['fields']['field_organization_website']['field'] = 'field_organization_website';
+  $handler->display->display_options['fields']['field_organization_website']['click_sort_column'] = 'url';
   $handler->display->display_options['path'] = 'organizations/xls';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+  );
+
+  /* Display: XML */
+  $handler = $view->new_display('views_data_export', 'XML', 'xml');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['style_options']['transform_type'] = 'pascal';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Acronym */
+  $handler->display->display_options['fields']['field_organization_acronym']['id'] = 'field_organization_acronym';
+  $handler->display->display_options['fields']['field_organization_acronym']['table'] = 'field_data_field_organization_acronym';
+  $handler->display->display_options['fields']['field_organization_acronym']['field'] = 'field_organization_acronym';
+  /* Field: Taxonomy term: Website */
+  $handler->display->display_options['fields']['field_organization_website']['id'] = 'field_organization_website';
+  $handler->display->display_options['fields']['field_organization_website']['table'] = 'field_data_field_organization_website';
+  $handler->display->display_options['fields']['field_organization_website']['field'] = 'field_organization_website';
+  $handler->display->display_options['fields']['field_organization_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['path'] = 'organizations/xml';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -105,6 +163,7 @@ function humanitarianresponse_organizations_views_default_views() {
     t('Website'),
     t('Page'),
     t('XLS'),
+    t('XML'),
   );
   $export['organizations'] = $view;
 
