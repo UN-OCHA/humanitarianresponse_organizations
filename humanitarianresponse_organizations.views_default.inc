@@ -99,7 +99,7 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['fields']['field_organization_website']['table'] = 'field_data_field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['field'] = 'field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['path'] = 'organizations/xls';
+  $handler->display->display_options['path'] = 'organizations.xls';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -136,7 +136,7 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['fields']['field_organization_website']['table'] = 'field_data_field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['field'] = 'field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['path'] = 'organizations/xml';
+  $handler->display->display_options['path'] = 'organizations.xml';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
