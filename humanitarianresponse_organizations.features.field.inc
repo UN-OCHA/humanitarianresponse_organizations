@@ -34,6 +34,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => 255,
       ),
       'translatable' => '1',
@@ -63,6 +64,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'label' => 'Name',
       'required' => TRUE,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => 0,
         'user_register_form' => FALSE,
       ),
@@ -101,6 +103,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => '255',
       ),
       'translatable' => '0',
@@ -131,6 +134,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'label' => 'Acronym',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -179,6 +183,7 @@ function humanitarianresponse_organizations_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -208,6 +213,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'label' => 'Type',
       'required' => 1,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -242,6 +248,7 @@ function humanitarianresponse_organizations_field_default_fields() {
           'url_cutoff' => 80,
         ),
         'enable_tokens' => 1,
+        'entity_translation_sync' => FALSE,
         'title' => 'optional',
         'title_maxlength' => 128,
         'title_value' => '',
@@ -286,6 +293,7 @@ function humanitarianresponse_organizations_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 0,
+        'entity_translation_sync' => FALSE,
         'title' => 'none',
         'title_maxlength' => '128',
         'title_value' => '',
@@ -327,6 +335,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => 255,
       ),
       'translatable' => '1',
@@ -356,6 +365,7 @@ function humanitarianresponse_organizations_field_default_fields() {
       'label' => 'Name',
       'required' => TRUE,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => 0,
         'user_register_form' => FALSE,
       ),
