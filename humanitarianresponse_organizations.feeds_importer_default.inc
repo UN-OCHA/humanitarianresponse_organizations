@@ -23,6 +23,7 @@ function humanitarianresponse_organizations_feeds_importer_default() {
         'auto_detect_feeds' => FALSE,
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
+        'source' => 'http://terms.humanitarianresponse.info/organization-types.csv',
       ),
     ),
     'parser' => array(
