@@ -57,6 +57,11 @@ function humanitarianresponse_organizations_feeds_importer_default() {
             'target' => 'guid',
             'unique' => FALSE,
           ),
+          4 => array(
+            'source' => 'UUID',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
