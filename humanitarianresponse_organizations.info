@@ -8,6 +8,7 @@ dependencies[] = entity_translation
 dependencies[] = features
 dependencies[] = feeds
 dependencies[] = feeds_et
+dependencies[] = humanitarianresponse_core
 dependencies[] = link
 dependencies[] = options
 dependencies[] = taxonomy
