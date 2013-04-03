@@ -13,9 +13,9 @@ function humanitarianresponse_organizations_taxonomy_default_vocabularies() {
       'name' => 'Organization types',
       'machine_name' => 'organization_types',
       'description' => '',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -36,9 +36,9 @@ function humanitarianresponse_organizations_taxonomy_default_vocabularies() {
       'name' => 'Organizations',
       'machine_name' => 'organizations',
       'description' => 'Organizations sources of the content',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
