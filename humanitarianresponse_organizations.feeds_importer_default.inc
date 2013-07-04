@@ -90,10 +90,12 @@ function humanitarianresponse_organizations_feeds_importer_default() {
     'name' => 'CSV Organizations',
     'description' => 'Import organizations from a CSV file',
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
+      'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
-        'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
       ),
     ),
     'parser' => array(
@@ -109,34 +111,60 @@ function humanitarianresponse_organizations_feeds_importer_default() {
         'bundle' => 'organizations',
         'mappings' => array(
           0 => array(
-            'source' => 'Name',
+            'source' => 'Name:en',
             'target' => 'name',
             'unique' => 1,
           ),
           1 => array(
+            'source' => 'Name:en',
+            'target' => 'name_field:et:en',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Name:fr',
+            'target' => 'name_field:et:fr',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'Name:es',
+            'target' => 'name_field:et:es',
+            'unique' => FALSE,
+          ),
+          3 => array(
             'source' => 'Type',
             'target' => 'field_organization_type',
             'unique' => FALSE,
           ),
-          2 => array(
+          4 => array(
             'source' => 'Acronym',
             'target' => 'field_organization_acronym',
             'unique' => FALSE,
           ),
-          3 => array(
+          5 => array(
             'source' => 'Website',
             'target' => 'field_organization_website:url',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'GUID',
+            'target' => 'guid',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'UUID',
+            'target' => 'uuid:uuid',
             'unique' => FALSE,
           ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
+        'vocabulary' => 0,
       ),
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
+    'import_period' => '86400',
     'expire_period' => 3600,
     'import_on_create' => 1,
     'process_in_background' => 0,
