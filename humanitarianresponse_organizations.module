@@ -10,4 +10,5 @@ include_once('humanitarianresponse_organizations.features.inc');
  */
 function humanitarianresponse_organizations_cron() {
   humanitarianresponse_core_feeds_check('csv_organization_types', 'http://terms.humanitarianresponse.info/organization-types.csv');
+  humanitarianresponse_core_feeds_check('csv_organization_types', 'http://terms.humanitarianresponse.info/organizations.csv');
 }
