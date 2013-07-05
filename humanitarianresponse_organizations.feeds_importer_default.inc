@@ -137,35 +137,30 @@ function humanitarianresponse_organizations_feeds_importer_default() {
           ),
           5 => array(
             'source' => 'Acronym:en',
-            'target' => 'field_organization_acronym',
-            'unique' => FALSE,
-          ),
-          6 => array(
-            'source' => 'Acronym:en',
             'target' => 'field_organization_acronym:et:en',
             'unique' => FALSE,
           ),
-          7 => array(
+          6 => array(
             'source' => 'Acronym:fr',
             'target' => 'field_organization_acronym:et:fr',
             'unique' => FALSE,
           ),
-          8 => array(
+          7 => array(
             'source' => 'Acronym:es',
             'target' => 'field_organization_acronym:et:es',
             'unique' => FALSE,
           ),
-          9 => array(
+          8 => array(
             'source' => 'Website',
             'target' => 'field_organization_website:url',
             'unique' => FALSE,
           ),
-          10 => array(
+          9 => array(
             'source' => 'GUID',
             'target' => 'guid',
             'unique' => FALSE,
           ),
-          11 => array(
+          10 => array(
             'source' => 'UUID',
             'target' => 'uuid:uuid',
             'unique' => FALSE,
