@@ -37,7 +37,6 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   /* Field: Taxonomy term: Type */
   $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
   $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
