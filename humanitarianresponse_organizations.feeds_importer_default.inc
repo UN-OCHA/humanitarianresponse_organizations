@@ -186,5 +186,102 @@ function humanitarianresponse_organizations_feeds_importer_default() {
   );
   $export['csv_organizations'] = $feeds_importer;
 
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'csv_organizations_local';
+  $feeds_importer->config = array(
+    'name' => 'CSV Organizations Local',
+    'description' => 'Import organizations from a local CSV file',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'bundle' => 'organizations',
+        'mappings' => array(
+          0 => array(
+            'source' => 'Name:en',
+            'target' => 'name',
+            'unique' => 1,
+          ),
+          1 => array(
+            'source' => 'Name:en',
+            'target' => 'name_field:et:en',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Name:fr',
+            'target' => 'name_field:et:fr',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'Name:es',
+            'target' => 'name_field:et:es',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'Type',
+            'target' => 'field_organization_type',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'Acronym:en',
+            'target' => 'field_organization_acronym:et:und',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'Acronym:en',
+            'target' => 'field_organization_acronym:et:en',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'Acronym:fr',
+            'target' => 'field_organization_acronym:et:fr',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'Acronym:es',
+            'target' => 'field_organization_acronym:et:es',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'Website',
+            'target' => 'field_organization_website:url',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'vocabulary' => 0,
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['csv_organizations_local'] = $feeds_importer;
+
   return $export;
 }
