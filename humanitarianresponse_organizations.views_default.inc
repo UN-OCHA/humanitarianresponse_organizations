@@ -62,6 +62,70 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'organizations' => 'organizations',
   );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['group'] = 1;
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Taxonomy term: Type (field_organization_type) */
+  $handler->display->display_options['filters']['field_organization_type_tid']['id'] = 'field_organization_type_tid';
+  $handler->display->display_options['filters']['field_organization_type_tid']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['filters']['field_organization_type_tid']['field'] = 'field_organization_type_tid';
+  $handler->display->display_options['filters']['field_organization_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_organization_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organization_type_tid']['expose']['operator_id'] = 'field_organization_type_tid_op';
+  $handler->display->display_options['filters']['field_organization_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_organization_type_tid']['expose']['operator'] = 'field_organization_type_tid_op';
+  $handler->display->display_options['filters']['field_organization_type_tid']['expose']['identifier'] = 'field_organization_type_tid';
+  $handler->display->display_options['filters']['field_organization_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  $handler->display->display_options['filters']['field_organization_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organization_type_tid']['vocabulary'] = 'organization_types';
+  /* Filter criterion: Taxonomy term: Acronym (field_organization_acronym) */
+  $handler->display->display_options['filters']['field_organization_acronym_value']['id'] = 'field_organization_acronym_value';
+  $handler->display->display_options['filters']['field_organization_acronym_value']['table'] = 'field_data_field_organization_acronym';
+  $handler->display->display_options['filters']['field_organization_acronym_value']['field'] = 'field_organization_acronym_value';
+  $handler->display->display_options['filters']['field_organization_acronym_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_organization_acronym_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organization_acronym_value']['expose']['operator_id'] = 'field_organization_acronym_value_op';
+  $handler->display->display_options['filters']['field_organization_acronym_value']['expose']['label'] = 'Acronym';
+  $handler->display->display_options['filters']['field_organization_acronym_value']['expose']['operator'] = 'field_organization_acronym_value_op';
+  $handler->display->display_options['filters']['field_organization_acronym_value']['expose']['identifier'] = 'field_organization_acronym_value';
+  $handler->display->display_options['filters']['field_organization_acronym_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -98,7 +162,7 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['fields']['field_organization_website']['table'] = 'field_data_field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['field'] = 'field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['path'] = 'organizations.xls';
+  $handler->display->display_options['path'] = 'organizations/xls';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -135,7 +199,7 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['fields']['field_organization_website']['table'] = 'field_data_field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['field'] = 'field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['path'] = 'organizations.xml';
+  $handler->display->display_options['path'] = 'organizations/xml';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -174,7 +238,7 @@ function humanitarianresponse_organizations_views_default_views() {
   $handler->display->display_options['fields']['field_organization_website']['table'] = 'field_data_field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['field'] = 'field_organization_website';
   $handler->display->display_options['fields']['field_organization_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['path'] = 'organizations.csv';
+  $handler->display->display_options['path'] = 'organizations/csv';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
